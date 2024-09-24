@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/features\/users[1:18]","start":1727187706630,"end":1727187708810,"title":"examples\/features\/users[1:18] 15:21:46.630-15:21:48.810 Retrieve and Validate All books"},{"id":2,"group":2,"content":"examples\/features\/users[2:27]","start":1727187706630,"end":1727187708379,"title":"examples\/features\/users[2:27] 15:21:46.630-15:21:48.379 Retrieve and Validate"},{"id":3,"group":3,"content":"examples\/features\/users[3.1:48]","start":1727187706740,"end":1727187708831,"title":"examples\/features\/users[3.1:48] 15:21:46.740-15:21:48.831 Filter and Retrieve books and Validate the Response"},{"id":4,"group":4,"content":"examples\/features\/users[3.2:48]","start":1727187706740,"end":1727187708809,"title":"examples\/features\/users[3.2:48] 15:21:46.740-15:21:48.809 Filter and Retrieve books and Validate the Response"},{"id":5,"group":5,"content":"examples\/features\/users[4:52]","start":1727187706738,"end":1727187708810,"title":"examples\/features\/users[4:52] 15:21:46.738-15:21:48.810 Retrieve  All books and verify id not null"},{"id":6,"group":2,"content":"examples\/features\/users[5:60]","start":1727187708383,"end":1727187708802,"title":"examples\/features\/users[5:60] 15:21:48.383-15:21:48.802 Retrieve All books and validte the unicity of id"},{"id":7,"group":2,"content":"examples\/features\/users[6:70]","start":1727187708808,"end":1727187709214,"title":"examples\/features\/users[6:70] 15:21:48.808-15:21:49.214 Retrieve All Orders"},{"id":8,"group":4,"content":"examples\/features\/users[7.1:91]","start":1727187708816,"end":1727187709557,"title":"examples\/features\/users[7.1:91] 15:21:48.816-15:21:49.557 Create order with an available book"},{"id":9,"group":1,"content":"examples\/features\/users[8:95]","start":1727187708816,"end":1727187710945,"title":"examples\/features\/users[8:95] 15:21:48.816-15:21:50.945 Delete order"},{"id":10,"group":5,"content":"examples\/features\/users[9:109]","start":1727187708816,"end":1727187710045,"title":"examples\/features\/users[9:109] 15:21:48.816-15:21:50.045 Retrieve Order"},{"id":11,"group":3,"content":"examples\/features\/users[10:119]","start":1727187708834,"end":1727187709255,"title":"examples\/features\/users[10:119] 15:21:48.834-15:21:49.255 Retrieve book with id  <bookId>"},{"id":12,"group":2,"content":"examples\/features\/users[11.1:143]","start":1727187709218,"end":1727187709840,"title":"examples\/features\/users[11.1:143] 15:21:49.218-15:21:49.840 Create order with non  available book"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

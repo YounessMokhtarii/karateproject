@@ -1,0 +1,12 @@
+{
+    "book": {
+        "id": "#number",
+        "name": "#string",
+        "author": "#string",
+        "isbn": "#string",
+        "price": "#number",
+        "type": "#string",
+        "current-stock": "#number",
+        "available": "#boolean"
+    }
+}
